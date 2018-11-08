@@ -4,98 +4,177 @@ import {
   Platform,
   ScrollView,
   StyleSheet,
+  Button,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import { WebBrowser } from 'expo';
+import { WebBrowser ,Permissions} from 'expo';
 
 import { MonoText } from '../components/StyledText';
+import { ImagePicker } from 'expo';
+
+import axios from 'axios';
+
 
 export default class ImagePickerScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
 
+  state = {
+    image: {},
+    predictionData: null
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <View style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/robot-dev.png')
-                  : require('../assets/images/robot-prod.png')
-              }
-              style={styles.welcomeImage}
-            />
+            <Text> Image Classifier </Text>
           </View>
 
           <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
 
-            <Text style={styles.getStartedText}>Get started by opening</Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
+            <View>
+              <Button
+                      title="Pick an image from camera roll"
+                      onPress={this._pickImage}
+                    />
             </View>
 
-            <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
-            </Text>
+
+            <View>
+              <Button
+              title="Take an image"
+              onPress={this._takeImage}
+            />
+           </View>
+
+          <Image source={this.state.image} style={{height: 200, width: 200}} />
+
+
+
           </View>
 
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
 
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
+          <View> 
+            {this.renderPredictions()}
           </View>
         </View>
-      </View>
+
+     </View>
     );
   }
 
-  _maybeRenderDevelopmentModeWarning() {
-    if (__DEV__) {
-      const learnMoreButton = (
-        <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
-          Learn more
-        </Text>
-      );
+  renderPredictions () {
+    
+    if (this.state.predictionData){
+      let {class: predictedClass,  predictions} = this.state.predictionData;
+       predictions = predictions.sort((a,b) => b.loss - a.loss).slice(0,3);
+       console.log(predictions)
+      return (
+         <View>
+            <Text>Predicted Class: {predictedClass}</Text>
+            {predictions.map(p => {
+              return (
+              <Text key={p.class}>class:{p.class} ; loss: {p.loss} </Text>               );
+            })}
+            
+        </View>
+      
+      
+      )
+    }else{
+      return null
+    }
+  }
+  _pickImage = async () => {
+    const status = await  this._verifyPermissions();
 
-      return (
-        <Text style={styles.developmentModeText}>
-          Development mode is enabled, your app will be slower but you can use useful development
-          tools. {learnMoreButton}
-        </Text>
-      );
-    } else {
-      return (
-        <Text style={styles.developmentModeText}>
-          You are not in development mode, your app will run at full speed.
-        </Text>
-      );
+    let result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      aspect: [4, 3],
+    });
+
+    console.log(result);
+    this._updateState(result);
+
+
+  }
+
+  _verifyPermissions = async () =>{
+    console.log("In verify  Image")
+
+    const cameraPermission = await Permissions.askAsync(Permissions.CAMERA);
+    const cameraRollPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+
+    const { status, expires, permissions } = await Permissions.getAsync(Permissions.CAMERA, Permissions.CAMERA_ROLL);
+    if (status !== 'granted') {
+      const cameraPermission = await Permissions.askAsync(Permissions.CAMERA);
+      const cameraRollPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+      
+      if (cameraPermission.status  === 'granted' && cameraRollPermission.status === 'granted') {
+        console.log("Permissions granted")
+        return true
+      }else{
+        alert('Hey! You heve not enabled selected permissions');
+        return false
+      }
+
     }
   }
 
-  _handleLearnMorePress = () => {
-    WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
+  
+  _takeImage = async () => {
+    console.log("Before verify permission")
+
+    const status = await  this._verifyPermissions();
+    console.log("In Take Image")
+    let result = await ImagePicker.launchCameraAsync({
+      allowsEditing: true,
+      aspect: [4, 3],
+    });
+
+    console.log(result);
+    this._updateState(result);
+
   };
 
-  _handleHelpPress = () => {
-    WebBrowser.openBrowserAsync(
-      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
-    );
-  };
+  _updateState = async (result) =>{
+    this.setState({image: {uri: result.uri}});
+    await this._classifyImage(result.uri)
+  }
+
+  _classifyImage = async (uri ) => {
+    let url = 'https://food-img-classifier.herokuapp.com/classify'
+    //url = "http://requestbin.fullcontact.com/1j6yysf1"
+    url = "http://localhost:5000/classify"
+    
+    let uriParts = uri.split('.');
+    let fileType = uri[uri.length - 1];
+
+    const data = new FormData();
+    //data.append('file', {uri:imageUrl});
+    data.append('file', {
+      uri: uri,
+      name: `photo.${fileType}`,
+      type: `image/${fileType}`,
+    });
+
+
+    const results = await axios.post(url,data, {
+      headers: {
+          'Content-Type': 'multipart/form-data',
+          'Accept': 'application/json'
+
+      }});
+    console.log(results.data)
+
+    this.setState({predictionData: results.data});
+
+  }
 }
 
 const styles = StyleSheet.create({
@@ -103,13 +182,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  developmentModeText: {
-    marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
-    fontSize: 14,
-    lineHeight: 19,
-    textAlign: 'center',
-  },
+  
   contentContainer: {
     paddingTop: 30,
   },
@@ -118,71 +191,5 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
   },
-  welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
-  },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50,
-  },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
-  },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
-  },
-  tabBarInfoContainer: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: { height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 20,
-      },
-    }),
-    alignItems: 'center',
-    backgroundColor: '#fbfbfb',
-    paddingVertical: 20,
-  },
-  tabBarInfoText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    textAlign: 'center',
-  },
-  navigationFilename: {
-    marginTop: 5,
-  },
-  helpContainer: {
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  helpLink: {
-    paddingVertical: 15,
-  },
-  helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7',
-  },
+  
 });
