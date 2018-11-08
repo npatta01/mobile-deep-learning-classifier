@@ -1,17 +1,13 @@
 import React from 'react';
 import {
   Image,
-  Platform,
-  ScrollView,
   StyleSheet,
   Button,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native';
-import { WebBrowser ,Permissions} from 'expo';
-
-import { MonoText } from '../components/StyledText';
+import { Permissions} from 'expo';
+  
 import { ImagePicker } from 'expo';
 
 import axios from 'axios';
@@ -36,14 +32,12 @@ export default class ImagePickerScreen extends React.Component {
           </View>
 
           <View style={styles.getStartedContainer}>
-
             <View>
               <Button
                       title="Pick an image from camera roll"
                       onPress={this._pickImage}
                     />
             </View>
-
 
             <View>
               <Button
@@ -53,8 +47,6 @@ export default class ImagePickerScreen extends React.Component {
            </View>
 
           <Image source={this.state.image} style={{height: 200, width: 200}} />
-
-
 
           </View>
 
@@ -149,14 +141,10 @@ export default class ImagePickerScreen extends React.Component {
 
   _classifyImage = async (uri ) => {
     let url = 'https://food-img-classifier.herokuapp.com/classify'
-    //url = "http://requestbin.fullcontact.com/1j6yysf1"
-    url = "http://localhost:5000/classify"
-    
     let uriParts = uri.split('.');
-    let fileType = uri[uri.length - 1];
+    let fileType = uriParts[uriParts.length - 1];
 
     const data = new FormData();
-    //data.append('file', {uri:imageUrl});
     data.append('file', {
       uri: uri,
       name: `photo.${fileType}`,
