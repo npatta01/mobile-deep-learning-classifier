@@ -2,15 +2,37 @@ import React from 'react';
 import {
   Image,
   StyleSheet,
-  Button,
-  Text,
   View,
+  ScrollView,
+  ActivityIndicator,
+
 } from 'react-native';
+
+import { Button, Text, Icon , ListItem, FlatList} from 'react-native-elements';
+
 import { Permissions} from 'expo';
   
-import { ImagePicker } from 'expo';
+import { ImagePicker,  Asset, ImageManipulator } from 'expo';
 
 import axios from 'axios';
+
+import humanFormat from 'human-format';
+
+
+const data = {
+  class: "bibimbap",
+  predictions: [
+    {
+      class: "apple_pie", 
+      loss: 0.15876001119613647
+    }, 
+    {
+      class: "baby_back_ribs", 
+      loss: 0.09508383274078369
+    }, 
+  ]
+};
+
 
 
 export default class ImagePickerScreen extends React.Component {
@@ -20,63 +42,87 @@ export default class ImagePickerScreen extends React.Component {
 
   state = {
     image: {},
-    predictionData: null
+    predictionData: null,
+    loading: false
   }
+
+
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
-            <Text> Image Classifier </Text>
+          
+          <View style={styles.titleContainer}>
+            <Text h1>See Food </Text>
+
           </View>
 
-          <View style={styles.getStartedContainer}>
-            <View>
-              <Button
-                      title="Pick an image from camera roll"
-                      onPress={this._pickImage}
-                    />
+            <View style={styles.actionsContainer}>
+
+                <View style={styles.callToActionContainer}>
+                  <Icon
+                    name='camera-alt' raised onPress={this._takeImage}/>
+
+                  <Icon
+                    name='image' raised onPress={this._pickImage}/>
+                </View>
+
             </View>
 
-            <View>
-              <Button
-              title="Take an image"
-              onPress={this._takeImage}
-            />
-           </View>
-
-          <Image source={this.state.image} style={{height: 200, width: 200}} />
+          <View style={styles.imageContainer}>
+            <Image source={this.state.image} style={{height: 200, width: 200}} />
 
           </View>
 
 
-          <View> 
+          <View style={styles.predictionsContainer}>
             {this.renderPredictions()}
           </View>
         </View>
 
-     </View>
+     </ScrollView>
     );
   }
 
   renderPredictions () {
     
-    if (this.state.predictionData){
+    if (this.state.loading){
+      return <ActivityIndicator size="large" color="#0000ff" />
+    }else if (this.state.predictionData){
       let {class: predictedClass,  predictions} = this.state.predictionData;
        predictions = predictions.sort((a,b) => b.loss - a.loss).slice(0,3);
        console.log(predictions)
       return (
-         <View>
-            <Text>Predicted Class: {predictedClass}</Text>
-            {predictions.map(p => {
-              return (
-              <Text key={p.class}>class:{p.class} ; loss: {p.loss} </Text>               );
-            })}
-            
+         <View style={styles.predictionsContentContainer}>
+            <Text h3>Predictions</Text>
+            <Text h5>Most Likely {predictedClass} </Text>
+            <Text h3>Other possibilities</Text>
+            <View>
+              {predictions.map(p => {
+                return (
+                    <View key={p.class}  style={styles.predictionRow}>
+                      <Text>{p.class}</Text>
+                      <Text>loss: {p.loss}</Text>
+                    </View>
+                );
+              })}
+            </View>
+
+            <View style={styles.feedBackContainer}>
+                <Text h4  >Feedback</Text>
+                <View style={styles.feedBackActionsContainer}>
+                  <Icon
+                      name='md-happy' raised onPress={this._takeImage} type="ionicon"/>
+
+                  <Icon
+                      name='md-sad' raised onPress={this._pickImage} type="ionicon"/>
+
+                </View>
+
+            </View>
+
         </View>
-      
-      
       )
     }else{
       return null
@@ -90,8 +136,20 @@ export default class ImagePickerScreen extends React.Component {
       aspect: [4, 3],
     });
 
+ 
     console.log(result);
-    this._updateState(result);
+
+
+    if (result.cancelled){
+      console.log("Cancelled")
+    }else{
+
+      this._updateState(result);
+
+    }
+
+
+
 
 
   }
@@ -130,17 +188,32 @@ export default class ImagePickerScreen extends React.Component {
     });
 
     console.log(result);
-    this._updateState(result);
+
+    if (result.cancelled){
+      console.log("Cancelled")
+    }else{
+      this._updateState(result);
+
+    }
 
   };
 
   _updateState = async (result) =>{
-    this.setState({image: {uri: result.uri}});
-    await this._classifyImage(result.uri)
+    
+    const resizedResult = await ImageManipulator.manipulateAsync(
+      result.uri,
+      [{ resize: {width:400 }}],
+      { format: 'jpeg' , compress: 0}
+    );
+    
+    console.log(resizedResult)
+
+    this.setState({image: {uri: resizedResult.uri}, loading: true});
+    await this._classifyImage(resizedResult.uri)
   }
 
   _classifyImage = async (uri ) => {
-    let url = 'https://food-img-classifier.herokuapp.com/classify'
+    let url = 'https://np-food-classifier.herokuapp.com/api/classify'
     let uriParts = uri.split('.');
     let fileType = uriParts[uriParts.length - 1];
 
@@ -160,7 +233,7 @@ export default class ImagePickerScreen extends React.Component {
       }});
     console.log(results.data)
 
-    this.setState({predictionData: results.data});
+    this.setState({predictionData: results.data, loading: false });
 
   }
 }
@@ -168,16 +241,87 @@ export default class ImagePickerScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+   // backgroundColor: '#fff',
+    paddingTop: 10,
+    
   },
   
   contentContainer: {
-    paddingTop: 30,
+    paddingTop: 10,
+    marginTop: 5,
   },
-  welcomeContainer: {
+  titleContainer: {
     alignItems: 'center',
     marginTop: 10,
-    marginBottom: 20,
+    flex: 2, 
+  //  backgroundColor: "red",
+    justifyContent: 'center',
+  },
+  actionsContainer: {
+    alignItems: 'center',
+    marginTop: 5,
+    marginBottom: 5,
+    flex: 1, 
+  },
+  imageContainer: {
+    flex: 4 ,
+    alignItems: 'center',
+
+  },
+  callToActionContainer: {
+    flex: 1,
+    flexDirection : "row"
+  },
+  feedBackContainer: {
+    flex: 1,
+  },
+
+  feedBackActionsContainer: {
+    flex: 1,
+    flexDirection : "row"
+  },
+
+  predictionsContainer: {
+    flex: 4, 
+   // alignItems: "flex-start",
+   // flexShrink: 2,
+   //  backgroundColor: "red",
+    padding: 10,
+    justifyContent: 'center',
+    
+  },
+
+  predictionsContentContainer: {
+    flex: 4, 
+   // alignItems: "flex-start",
+   // flexShrink: 2,
+   //  backgroundColor: "red",
+    padding: 10,
+    //justifyContent: 'center',
+    //alignItems: 'center',
+
+  },
+
+  predictionRow: {
+    //flex: 1,
+    flexDirection: "row",
+  //  alignItems: "flex-end",
+  // borderColor: "red",
+   // backgroundColor: "green",
+    
+    justifyContent: "space-between"
+
+
+  },
+
+  predictionRowCategory: {
+    flex: 1,
+    justifyContent: "space-between"
   },
   
+  predictionRowlabel: {
+    flex: 1, 
+    justifyContent: "space-between"
+
+  }
 });

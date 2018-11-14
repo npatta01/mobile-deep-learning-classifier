@@ -16,8 +16,11 @@
     "@expo/samples": "2.1.1",
     "axios": "^0.18.0",
     "expo": "^31.0.2",
+    "human-format": "^0.10.1",
+    "lodash.merge": "^4.6.1",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "react-native-elements": "^0.19.1",
     "react-navigation": "^2.18.2"
   },
   "devDependencies": {
