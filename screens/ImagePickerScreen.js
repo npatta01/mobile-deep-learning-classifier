@@ -203,7 +203,7 @@ export default class ImagePickerScreen extends React.Component {
     const resizedResult = await ImageManipulator.manipulateAsync(
       result.uri,
       [{ resize: {width:400 }}],
-      { format: 'jpeg' , compress: 0}
+      {  compress: 0.7}
     );
     
     console.log(resizedResult)
@@ -225,15 +225,25 @@ export default class ImagePickerScreen extends React.Component {
     });
 
 
-    const results = await axios.post(url,data, {
-      headers: {
-          'Content-Type': 'multipart/form-data',
-          'Accept': 'application/json'
+    try {
+      const results = await axios.post(url,data, {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            'Accept': 'application/json'
 
-      }});
-    console.log(results.data)
+        },
+        timeout: 2 * 60 * 1000, // 2 mins
+      });
+      console.log(results.data)
+      this.setState({predictionData: results.data, loading: false });
 
-    this.setState({predictionData: results.data, loading: false });
+    }catch (e){
+      this.setState({loading: false });
+      alert(e)
+      console.log(e)
+
+    }
+
 
   }
 }

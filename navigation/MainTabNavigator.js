@@ -4,6 +4,8 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import SettingsScreen from '../screens/SettingsScreen';
 import ImagePickerScreen from '../screens/ImagePickerScreen';
+import DebugScreen from '../screens/DebugScreen';
+
 
   
 
@@ -37,7 +39,22 @@ ImagePickerStack.navigationOptions = {
   ),
 };
 
+const DebugStack = createStackNavigator({
+  Debug: DebugScreen,
+});
+
+DebugStack.navigationOptions = {
+  tabBarLabel: 'Debug',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+    />
+  ),
+};
+
 export default createBottomTabNavigator({
   ImagePickerStack,
+  DebugStack,
   SettingsStack,
 });
