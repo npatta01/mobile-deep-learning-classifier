@@ -54,7 +54,7 @@ export default class ImagePickerScreen extends React.Component {
         <View style={styles.container} contentContainerStyle={styles.contentContainer}>
           
           <View style={styles.titleContainer}>
-            <Text h1>See Food </Text>
+            <Text h1>What Food Is It? </Text>
 
           </View>
 
@@ -96,7 +96,7 @@ export default class ImagePickerScreen extends React.Component {
       return (
          <View style={styles.predictionsContentContainer}>
             <Text h3>Predictions</Text>
-            <Text h5>Most Likely {predictedClass} </Text>
+            <Text h5>Most likely:   {predictedClass} </Text>
             <Text h3>Other possibilities</Text>
             <View>
               {predictions.map(p => {
