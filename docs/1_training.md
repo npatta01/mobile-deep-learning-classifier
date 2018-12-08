@@ -67,15 +67,18 @@ There are two options for a Python web framework:
 
 It is best to use a framework which is **asynchronous** because it can handle **multiple requests** at a time.
 
-We provide instructions on both Flask and Starlette here.  
+In this article, We provide instructions on using the Flask framework that is deployed on Heroku.
+
 ### Our Flask Web Application
 https://food-img-classifier.herokuapp.com
 
-Note:  we used flask, but we will change it to Starlette. 
+
 
 
 ### Heroku App
+
 - https://food-img-classifier.herokuapp.com
+http://np-food-classifier.herokuapp.com
 
 
 
