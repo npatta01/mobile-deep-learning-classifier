@@ -94,6 +94,7 @@ export default class HomeScreen extends React.Component {
               })}
             </View>
 
+            {/** 
             <View style={styles.feedBackContainer}>
                 <Text h4  >Feedback</Text>
                 <View style={styles.feedBackActionsContainer}>
@@ -106,6 +107,7 @@ export default class HomeScreen extends React.Component {
                 </View>
 
             </View>
+            */}
 
         </View>
       )
