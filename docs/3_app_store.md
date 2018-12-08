@@ -2,3 +2,18 @@
 
 ![Play Store  Naming](images/part3/play_store_name.png)
 
+
+
+
+# Apple 
+```
+fastlane pilot upload --skip_submission \
+--skip_waiting_for_build_processing \
+--verbose \
+--ipa "app.ipa" 
+```
+
+![Apple Store Submit](images/part3/apple_store_submit.png)
+
+![Apple Store Submit Complete](images/part3/apple_store_submit_complete.png)
+
