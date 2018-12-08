@@ -2,39 +2,23 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import TabBarIcon from '../components/TabBarIcon';
-import SettingsScreen from '../screens/SettingsScreen';
-import ImagePickerScreen from '../screens/ImagePickerScreen';
+import HomeScreen from "../screens/HomeScreen";
 import DebugScreen from '../screens/DebugScreen';
+import AboutScreen from '../screens/AboutScreen';
 
 
   
 
-
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+const HomeScreenStack = createStackNavigator({
+  Home: HomeScreen,
 });
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+HomeScreenStack.navigationOptions = {
+  tabBarLabel: 'HOME',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
-  ),
-};
-
-
-const ImagePickerStack = createStackNavigator({
-  ImagePicker: ImagePickerScreen,
-});
-
-ImagePickerStack.navigationOptions = {
-  tabBarLabel: 'IP',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+      name={Platform.OS === 'ios' ? 'ios-home' : 'md-home'}
     />
   ),
 };
@@ -44,7 +28,7 @@ const DebugStack = createStackNavigator({
 });
 
 DebugStack.navigationOptions = {
-  tabBarLabel: 'Debug',
+  tabBarLabel: 'DEBUG',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -53,8 +37,22 @@ DebugStack.navigationOptions = {
   ),
 };
 
+const AboutStack = createStackNavigator({
+  About: AboutScreen,
+});
+
+AboutStack.navigationOptions = {
+  tabBarLabel: 'ABOUT',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-information' : 'md-information'}
+    />
+  ),
+};
+
 export default createBottomTabNavigator({
-  ImagePickerStack,
+  HomeScreenStack,
+  AboutStack,
   DebugStack,
-  SettingsStack,
 });

@@ -7,6 +7,8 @@ import {
   ActivityIndicator,
 
 } from 'react-native';
+import {AppConfig} from "../config"
+
 
 import { Button, Text, Icon , ListItem, FlatList} from 'react-native-elements';
 
@@ -16,26 +18,9 @@ import { ImagePicker,  Asset, ImageManipulator } from 'expo';
 
 import axios from 'axios';
 
-import humanFormat from 'human-format';
 
 
-const data = {
-  class: "bibimbap",
-  predictions: [
-    {
-      class: "apple_pie", 
-      loss: 0.15876001119613647
-    }, 
-    {
-      class: "baby_back_ribs", 
-      loss: 0.09508383274078369
-    }, 
-  ]
-};
-
-
-
-export default class ImagePickerScreen extends React.Component {
+export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -54,7 +39,7 @@ export default class ImagePickerScreen extends React.Component {
         <View style={styles.container} contentContainerStyle={styles.contentContainer}>
           
           <View style={styles.titleContainer}>
-            <Text h1>What Food Is It? </Text>
+            <Text h1>{AppConfig.title}</Text>
 
           </View>
 
@@ -213,7 +198,7 @@ export default class ImagePickerScreen extends React.Component {
   }
 
   _classifyImage = async (uri ) => {
-    let url = 'https://np-food-classifier.herokuapp.com/api/classify'
+    let url = `${AppConfig.host}/api/classify`
     let uriParts = uri.split('.');
     let fileType = uriParts[uriParts.length - 1];
 
