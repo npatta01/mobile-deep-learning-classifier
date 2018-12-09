@@ -17,5 +17,4 @@ Host should be a service that can listen to these type of requests.
 
 
 # Links
-[Privacy Policy MD](docs/appstore/privacy_policy.md)       
-[Privacy Policy](docs/appstore/privacy_policy.html)
+[Privacy Policy](docs/appstore/privacy_policy.md)       
