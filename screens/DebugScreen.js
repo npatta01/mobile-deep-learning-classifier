@@ -1,22 +1,20 @@
 import React from 'react';
 import {
-  Image,
   StyleSheet,
   View,
   ScrollView,
   ActivityIndicator,
 
 } from 'react-native';
+import {AppConfig} from "../config"
 
-import { Button, Text, Icon , ListItem, FlatList, SearchBar} from 'react-native-elements';
 
-import { Permissions} from 'expo';
+import { Button, Text, SearchBar} from 'react-native-elements';
+
   
-import { ImagePicker,  Asset, ImageManipulator } from 'expo';
+import {  ImageManipulator } from 'expo';
 
 import axios from 'axios';
-
-import humanFormat from 'human-format';
 
 
 
@@ -24,7 +22,7 @@ import humanFormat from 'human-format';
 
 export default class DebugScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    title: "Debug",
   };
 
   state = {
@@ -38,7 +36,6 @@ export default class DebugScreen extends React.Component {
   async componentDidMount() {
     const res = await this.loadClasses()
 
-    //this.setState({something})
   }
 
 
@@ -48,7 +45,6 @@ export default class DebugScreen extends React.Component {
         <View style={styles.container} contentContainerStyle={styles.contentContainer}>
           
           <View style={styles.titleContainer}>
-            <Text h4>Debug </Text>
 
           </View>
 
@@ -119,7 +115,9 @@ export default class DebugScreen extends React.Component {
   }
 
   _onWake = async ( ) => {
-    let url = 'https://np-food-classifier.herokuapp.com/ping'
+    let url = `${AppConfig.host}/ping`
+    console.log(`Image Url is ${url}`)
+    console.log(url)
     this.setState({loading: true });
     try {
       const results = await axios.get(url,{}, {
@@ -145,7 +143,7 @@ export default class DebugScreen extends React.Component {
 
 
   loadClasses = async ( ) => {
-    let url = 'https://np-food-classifier.herokuapp.com/api/classes'
+    let url = `${AppConfig.host}/api/classes`
     this.setState({loading: true });
     try {
       const results = await axios.get(url,{}, {
@@ -168,7 +166,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
    // backgroundColor: '#fff',
-    paddingTop: 10,
+   // paddingTop: 10,
     
   },
   
@@ -178,7 +176,7 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     alignItems: 'center',
-    marginTop: 10,
+    //marginTop: 10,
     flex: 2, 
   //  backgroundColor: "red",
     justifyContent: 'center',
