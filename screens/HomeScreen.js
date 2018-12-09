@@ -88,7 +88,7 @@ export default class HomeScreen extends React.Component {
                 return (
                     <View key={p.class}  style={styles.predictionRow}>
                       <Text>{p.class}</Text>
-                      <Text>loss: {p.loss}</Text>
+                      <Text>output: {p.loss}</Text>
                     </View>
                 );
               })}
@@ -195,8 +195,8 @@ export default class HomeScreen extends React.Component {
     
     console.log(resizedResult)
 
-    this.setState({image: {uri: resizedResult.uri}, loading: true});
-    await this._classifyImage(resizedResult.uri)
+    this.setState({image: {uri: result.uri}, loading: true});
+    await this._classifyImage(result.uri)
   }
 
   _classifyImage = async (uri ) => {
