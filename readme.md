@@ -16,3 +16,6 @@ Host should be a service that can listen to these type of requests.
 /api/classes    Return a list of classes
 
 
+# Links
+[Privacy Policy MD](docs/appstore/privacy_policy.md)       
+[Privacy Policy](docs/appstore/privacy_policy.html)
