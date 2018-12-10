@@ -24,7 +24,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Used to snap and idenitfy food pictures",
+        "NSPhotoLibraryUsageDescription": "Used to identify existing food pictures "
+      },
+      "bundleIdentifier": "com.rs-np.food-classifier"
+    },
+    "android": {
+      "package": "com.rsnp.foodclassifier"
     }
   }
 }
