@@ -3,6 +3,13 @@
 
 ```
 expo start
+
+expo build:android
+expo url:apk
+
+
+expo build:ios
+expo url:ipa
 ```
 
 

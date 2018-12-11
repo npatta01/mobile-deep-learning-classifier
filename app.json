@@ -9,7 +9,7 @@
       "ios",
       "android"
     ],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "splash": {
@@ -32,7 +32,9 @@
       "bundleIdentifier": "com.rs-np.food-classifier"
     },
     "android": {
-      "package": "com.rsnp.foodclassifier"
+      "package": "com.rsnp.foodclassifier",
+      "versionCode": 1
+
     }
   }
 }
