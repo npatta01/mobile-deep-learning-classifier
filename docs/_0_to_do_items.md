@@ -1,6 +1,8 @@
 # To Do
 
 1.  clean up web app
+Rename deployed heroku url (food-img-classifier)
+
 This is a good example:  https://github.com/nikhilno1/healthy-or-not
 
 app:
@@ -33,3 +35,6 @@ Notes:  only Android users can run the mobile app.
 1. scan the barcode:  
 - using QR Code (iPhone)
 - need to have Expo installed, can scan barcode at top it says "Scan QR Code"
+
+
+5) Rename repos:
