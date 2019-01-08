@@ -83,7 +83,8 @@ export default class DebugScreen extends React.Component {
       {  compress: 0.7}
     );
     
-    console.log(resizedResult)
+    console.log(resizedResult);
+    console.log("kkkk")
 
     this.setState({image: {uri: resizedResult.uri}, loading: true});
     await this._classifyImage(resizedResult.uri)

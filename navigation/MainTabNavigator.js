@@ -52,7 +52,7 @@ AboutStack.navigationOptions = {
 };
 
 export default createBottomTabNavigator({
-  HomeScreenStack,
-  AboutStack,
-  DebugStack,
+  Home: HomeScreenStack,
+  //AboutStack,
+  //DebugStack,
 });

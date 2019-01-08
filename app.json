@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "food-app",
+    "name": "bird-app",
     "description": "A very interesting project.",
-    "slug": "food-app",
+    "slug": "bird-app",
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "platforms": [
@@ -29,11 +29,15 @@
         "NSCameraUsageDescription": "Used to snap and idenitfy food pictures",
         "NSPhotoLibraryUsageDescription": "Used to identify existing food pictures "
       },
-      "bundleIdentifier": "com.rs-np.food-classifier"
+      "bundleIdentifier": "com.rs-np.bird-classifier"
     },
     "android": {
-      "package": "com.rsnp.foodclassifier",
-      "versionCode": 1
+      "package": "com.rsnp.birdclassifier",
+      "versionCode": 1,
+      "permissions": [
+        "CAMERA",
+        "CAMERA_ROLL"
+      ]
 
     }
   }

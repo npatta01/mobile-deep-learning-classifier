@@ -1,8 +1,8 @@
 const AppConfig = 
 
 {
-    title : "What Food Is It?"
-    ,host : "https://np-food-classifier.herokuapp.com"
+    title : "What Bird Is It?"
+    ,host : "https://bird-classifier.herokuapp.com"
 }
 
 const description = `

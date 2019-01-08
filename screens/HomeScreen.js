@@ -82,13 +82,13 @@ export default class HomeScreen extends React.Component {
          <View style={styles.predictionsContentContainer}>
             <Text h3>Predictions</Text>
             <Text h5>Most likely:   {predictedClass} </Text>
-            <Text h3>Other possibilities</Text>
+            <Text h3>Probabilities</Text>
             <View>
               {predictions.map(p => {
                 return (
                     <View key={p.class}  style={styles.predictionRow}>
                       <Text>{p.class}</Text>
-                      <Text>output: {p.loss}</Text>
+                      <Text>prob: {p.prob}</Text>
                     </View>
                 );
               })}
@@ -123,7 +123,6 @@ export default class HomeScreen extends React.Component {
       aspect: [4, 3],
     });
 
- 
     console.log(result);
 
 
@@ -146,6 +145,8 @@ export default class HomeScreen extends React.Component {
 
     const cameraPermission = await Permissions.askAsync(Permissions.CAMERA);
     const cameraRollPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+    console.log(cameraRollPermission)
+    console.log(cameraPermission)
 
     const { status, expires, permissions } = await Permissions.getAsync(Permissions.CAMERA, Permissions.CAMERA_ROLL);
     if (status !== 'granted') {
@@ -186,21 +187,29 @@ export default class HomeScreen extends React.Component {
   };
 
   _updateState = async (result) =>{
-    
-    const resizedResult = await ImageManipulator.manipulateAsync(
+    console.log("before res")
+
+    /*
+    const resizedResult = await  ImageManipulator.manipulateAsync(
       result.uri,
-      [{ resize: {width:400 }}],
+      [
+          { resize: {width:400 }}
+
+      ],
       {  compress: 0.7}
     );
-    
-    console.log(resizedResult)
+    */
+
+    console.log("ddsd")
+    //console.log(resizedResult)
 
     this.setState({image: {uri: result.uri}, loading: true});
     await this._classifyImage(result.uri)
   }
 
   _classifyImage = async (uri ) => {
-    let url = `${AppConfig.host}/api/classify`
+    let url = `${AppConfig.host}/api/classify`;
+    console.log(url);
     let uriParts = uri.split('.');
     let fileType = uriParts[uriParts.length - 1];
 
@@ -239,13 +248,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
    // backgroundColor: '#fff',
-    paddingTop: 10,
+    paddingTop: 20,
     
   },
   
   contentContainer: {
-    paddingTop: 10,
-    marginTop: 5,
+    paddingTop: 0,
+    marginTop: 0,
   },
   titleContainer: {
     alignItems: 'center',
