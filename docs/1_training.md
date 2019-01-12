@@ -16,12 +16,10 @@ The `tar.gz` file can be opened using:
 tar xvzf file.tar.gz
 ```
 #### Data Citation
-@inproceedings{bossard14,
-  title = {Food-101 -- Mining Discriminative Components with Random Forests},
-  author = {Bossard, Lukas and Guillaumin, Matthieu and Van Gool, Luc},
-  booktitle = {European Conference on Computer Vision},
-  year = {2014}
-}
+Bossard, Lukas and Guillaumin, Matthieu and Van Gool, Luc, Food-101 -- Mining Discriminative Components with Random Forests, European Conference on Computer Vision, 2014
+
+
+ 
 
 ## Model Analysis on Google Cloud Platform (GCP)
 The data was retrieved and analyzed on GCP.  Any cloud platform (such as Paperspace or AWS) is usable, as long as a GPU is available.  Instructions for setting up a GPU working environment will be available from fastai.  The MOOC will be officially released to the public in early 2019.
