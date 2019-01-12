@@ -18,9 +18,8 @@ To develop locally, you will [Node]() and [Expo]() installed
 We will install node using [NVM](https://github.com/creationix/nvm)
 ```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-#
+# comment
 nvm install node 
-
 nvm use node
 ```
 
