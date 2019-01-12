@@ -11,6 +11,7 @@
   - Output score should be 1 decimal point ✅
   - Include probability of outputs, with 2 decimal point ✅
   - formatting ✅
+  - remove ".ipynb_checkpoints" as a category on the mobile screen 
   
 - Rename repo:  (food-classifier to ----> mobile-deep-learning-classifier) ✅
   - contains Expo source code
@@ -20,7 +21,7 @@
   - This is a good example:  
 
 - Run model again
-  - remove .ipynb files
+  - remove .ipynb checkpoint files
 
 2.  add probability (in addition to the current "score" output on the mobile app)
 - Also, need to format output, or at least change to 2 decimal places.
