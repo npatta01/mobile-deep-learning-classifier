@@ -1,9 +1,9 @@
 # To Do
 
 1.  clean up web app
-Rename deployed heroku url (food-img-classifier)
+- Rename deployed heroku url (food-img-classifier)
 
-This is a good example:  https://github.com/nikhilno1/healthy-or-not
+- This is a good example:  https://github.com/nikhilno1/healthy-or-not
 
 app:
 https://healthy-or-not.herokuapp.com
