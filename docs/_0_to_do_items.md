@@ -1,16 +1,15 @@
 # To Do
 
 1.  clean up web app
-- Rename deployed heroku url (food-img-classifier)
-
-- This is a good example:  https://github.com/nikhilno1/healthy-or-not
-
-app:
-https://healthy-or-not.herokuapp.com
+- Rename repo:  (food-classifier to ----> mobile-deep-learning-classifier)
+- Rename deployed heroku url (food-classifier to ----> mobile-deep-learning-classifier)
+- This is a good example:  
+  - the form request example is here: https://github.com/nikhilno1/healthy-or-not
+  - app: https://healthy-or-not.herokuapp.com
 
 #### example web apps
-- the form request example is here:
-https://github.com/nikhilno1/healthy-or-not/blob/master/food-detector.py
+- [healthy or not app](https://healthy-or-not.herokuapp.com)
+  - code:  https://github.com/nikhilno1/healthy-or-not/blob/master/food-detector.py
 - [water classifier heroku app](https://water-classifier1.herokuapp.com)
 - [water classifier code](https://github.com/shankarj67/Water-classifier-fastai)
 
