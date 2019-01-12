@@ -17,8 +17,10 @@
 - Rename deployed heroku url (np-food-classifier to ----> food-img-classifier) ✅
   - Heroku login: https://id.heroku.com/login
   - Heroku dashboard:  https://dashboard.heroku.com/apps/food-img-classifier
+  - This is a good example:  
 
-- This is a good example:  
+- Run model again
+  - remove .ipynb files
 
 2.  add probability (in addition to the current "score" output on the mobile app)
 - Also, need to format output, or at least change to 2 decimal places.
@@ -36,17 +38,15 @@ https://dashboard.heroku.com/apps/food-img-classifier
 - [water classifier code](https://github.com/shankarj67/Water-classifier-fastai)
 
 
+---
 
+## References
 
 2. figure out which repo to use  
 
 - https://food-img-classifier.herokuapp.com
 - http://np-food-classifier.herokuapp.com
 - can use this example link:  https://whatscookingamerica.net/wp-content/uploads/2015/03/ApplePie423.jpg
-
-3.  maybe run model again?
-- remove .ipynb files
-- 
 
 
 ---
