@@ -7,6 +7,13 @@
   - the form request example is here: https://github.com/nikhilno1/healthy-or-not
   - app: https://healthy-or-not.herokuapp.com
 
+2.  add probability (in addition to the current "score" output on the mobile app)
+- Also, need to format output, or at least change to 2 decimal places.
+
+
+4.  We can take a video of mobile app in action and include a link to YouTube video.
+
+
 #### example web apps
 - [healthy or not app](https://healthy-or-not.herokuapp.com)
   - code:  https://github.com/nikhilno1/healthy-or-not/blob/master/food-detector.py
@@ -15,7 +22,6 @@
 
 https://id.heroku.com/login
 
-Also, need to format output, or at least change to 2 decimal places.
 
 2. figure out which repo to use  
 
@@ -27,13 +33,12 @@ Also, need to format output, or at least change to 2 decimal places.
 - remove .ipynb files
 - 
 
-4.  We can take a video of mobile app in action and include a link to YouTube video.
 
 ---
+
 Notes:  only Android users can run the mobile app.  
 1. scan the barcode:  
 - using QR Code (iPhone)
 - need to have Expo installed, can scan barcode at top it says "Scan QR Code"
 
 
-5) Rename repos:
