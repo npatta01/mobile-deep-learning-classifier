@@ -1,13 +1,12 @@
 {
-  "name": "my-new-project",
+  "name": "food-classifier",
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject",
-    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
+    "eject": "expo eject"
   },
   "jest": {
     "preset": "jest-expo"
@@ -18,14 +17,14 @@
     "expo": "^31.0.2",
     "human-format": "^0.10.1",
     "lodash.merge": "^4.6.1",
+    "punycode": "^2.1.1",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
     "react-native-elements": "^0.19.1",
-    "react-native-markdown-renderer": "^3.2.8",
-    "react-navigation": "^2.18.2"
+    "react-navigation": "^2.18.2",
+    "react-native-markdown-renderer": "^3.2.8"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0",
-    "jest-expo": "^31.0.0"
+    "babel-preset-expo": "^5.0.0"
   }
 }
