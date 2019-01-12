@@ -20,15 +20,12 @@
   - Heroku dashboard:  https://dashboard.heroku.com/apps/food-img-classifier
   - This is a good example:  
 
-- Run model again
-  - remove .ipynb checkpoint files
+## Run model again
+- remove .ipynb checkpoint files
 
-2.  add probability (in addition to the current "score" output on the mobile app)
-- Also, need to format output, or at least change to 2 decimal places.
+## Create video of mobile app
+- take a video of mobile app in action and include a link to YouTube video.
 
-
-4.  We can take a video of mobile app in action and include a link to YouTube video.
-https://dashboard.heroku.com/apps/food-img-classifier
 
 
 
