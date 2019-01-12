@@ -2,6 +2,20 @@
 
 This project was completed jointly by [Nidhin Pattaniyil](https://www.linkedin.com/in/nidhinpattaniyil/) and [Reshama Shaikh](https://reshamas.github.io).
 
+These are the requirements:  
+PyTorch:  version  1.0
+
+
+
+## Overview Diagram
+
+
+## Python version
+We are using Python version 3.6
+
+
+
+
 ## Food-101 Dataset
 The [Food-101](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) data was used which included 101 food categories with a total of 101K images.  Thus, each class had 1000 images, of which 250 are manually reviewed test images and 750 are training images:    
 >On purpose, the training images were not cleaned, and thus still contain some amount of noise. This comes mostly in the form of intense colors and sometimes wrong labels. All images were rescaled to have a maximum side length of 512 pixels.
@@ -39,9 +53,6 @@ The output of the deep learning model is a file with weights.  The file is calle
 Note to RS:  add snippets of code to share.
 
 This output file, `model.pth` will be the input to the heroku app.  
-
-## Python version
-We are using Python version 3.6
 
 ## Using Heroku for Deployment
 [Heroku](https://www.heroku.com/) was utilized to deploy the app on both web and mobile.  
