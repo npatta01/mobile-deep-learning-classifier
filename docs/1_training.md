@@ -2,18 +2,18 @@
 
 This project was completed jointly by [Nidhin Pattaniyil](https://www.linkedin.com/in/nidhinpattaniyil/) and [Reshama Shaikh](https://reshamas.github.io).
 
-This is what was used:    
+This is what was used for model **training**:    
 - fastai:  version 1.18
 - PyTorch:  version  1.0  (dev or stable)
 - Python:  version 3.6
 
-
+This is what was used for model **deployment**:    
+- Heroku
+- Flask
+- Expo
+- Xcode simulator (optional)
 
 ## Overview Diagram
-
-
-
-
 
 ## Food-101 Dataset
 The [Food-101](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) data was used which included 101 food categories with a total of 101K images.  Thus, each class had 1000 images, of which 250 are manually reviewed test images and 750 are training images:    
@@ -32,8 +32,6 @@ tar xvzf file.tar.gz
 Bossard, Lukas and Guillaumin, Matthieu and Van Gool, Luc, Food-101 -- Mining Discriminative Components with Random Forests, European Conference on Computer Vision, 2014
 
 
- 
-
 ## Model Analysis on Google Cloud Platform (GCP)
 The data was retrieved and analyzed on GCP.  Any cloud platform (such as Paperspace or AWS) is usable, as long as a GPU is available.  Instructions for setting up a GPU working environment will be available from fastai.  The MOOC will be officially released to the public in early 2019.
 
@@ -42,7 +40,6 @@ The model took about an hour to run on GCP.  The GPU type used was Nvidia Tesla 
 
 ## Training the Deep Learning Model
 The code used for training the data is available in the repository [npatta01/food-classifier](https://github.com/npatta01/food-classifier).  
-
 The [fastai](https://github.com/fastai) deep learning library, which runs on top of PyTorch, was utilized.  Other libraries, such as Keras or TensorFlow can be used to run your model. 
 
 ## Output from the Deep Learning Model
@@ -99,19 +96,16 @@ Xcode is only available for Mac, but Androis Studio is available for Mac or Wind
 
 These simulators are not required, though they are helpful in developing the app and provide a smoother development experience.  
 
-
-|                                                                                        | iOS                       | Android                                                               |
-|----------------------------------------------------------------------------------------|---------------------------|-----------------------------------------------------------------------|
-| Can be deployed locally on computer and mobile phone?                                  | yes                       | yes                                                                   |
-| Is [Expo](https://expo.io/) needed?                                                    | yes                       | yes                                                                   |
-| Can app be run locally on mobile phone by developer?                                   | yes, on iPhone            | yes, on Android                                                       |
-| Can the developer share unpublished app with others?                                   | no                        | yes, other users require Expo to be installed and using Android phone |
-| What is the cost of publishing to the store for public access? [a]                         | $100 per year             | $30 one-time fee                                                      |
-| Does official store publishing require: screenshots, privacy policy and contact info?  | yes                       | yes                                                                   |
-| For official store publishing, is a review required?                                   | Apple will do peer review | no additional review required                                         |
-
+|                                                       | iOS                       | Android                                    |
+|-------------------------------------------------------|---------------------------|--------------------------------------------|
+| Can be deployed locally on computer and mobile phone? | yes                       | yes                                        |
+| Is [Expo](https://expo.io/) needed?                   | yes                       | yes                                        |
+| Can app be run locally on mobile phone by developer?  | yes, on iPhone            | yes, on Android                            |
+| Can the developer share unpublished app with others?  | no                        | yes, other users require Expo to be installed and using Android phone |
+| What is the cost of publishing to the store for public access? [a]| $100 per year | $30 one-time fee                           |
+| Does official store publishing require: screenshots, privacy policy and contact info?  | yes                       | yes       |
+| For official store publishing, is a review required?  | Apple will do peer review | no additional review required              |
 [a] Cost indicated are in US dollars.
-
 
 
 ## Once mobile app is running
