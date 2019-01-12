@@ -27,52 +27,42 @@ The data was retrieved and analyzed on GCP.  Any cloud platform (such as Papersp
 ## Training Time
 The model took about an hour to run on GCP.  The GPU type used was Nvidia Tesla P100 with 100 GB of storage.  
 
-## Training the Model
-The code used for training the data is available in the repository [food-classifier](https://github.com/npatta01/food-classifier).  
+## Training the Deep Learning Model
+The code used for training the data is available in the repository [npatta01/food-classifier](https://github.com/npatta01/food-classifier).  
 
-The [fastai](https://github.com/fastai) deep learning library, which runs on top of PyTorch, was utilized.  The output was a model file with weights.  Other libraries, such as Keras or TensorFlow can be used to run your model.  
+The [fastai](https://github.com/fastai) deep learning library, which runs on top of PyTorch, was utilized.  Other libraries, such as Keras or TensorFlow can be used to run your model. 
+
+## Output from the Deep Learning Model
+The output of the deep learning model is a file with weights.  The file is called `model.pth` (or `final.pth`) which is stored under "releases" area of the repository because of its size:  https://github.com/npatta01/food-classifier/releases
+
+### fastai code
 Note to RS:  add snippets of code to share.
-
-The output of the code is a `model.pth` file which is stored under "releases" area because of its size:  https://github.com/npatta01/food-classifier/releases
 
 This output file, `model.pth` will be the input to the heroku app.  
 
-Reshama's food repo:  
-https://github.com/reshamas/food
+## Python version
+We are using Python version 3.6
 
+## Using Heroku for Deployment
+[Heroku](https://www.heroku.com/) was utilized to deploy the app on both web and mobile.  
 
-## Training the Model
-https://github.com/npatta01/food-classifier
-
-## repo for iOS / Android App
-https://github.com/npatta01/food-app
-
-
-
-
-##  Deployment Options for Web App
-There are two options discussed here for deploying an app on the web:  
-- [Heroku](https://www.heroku.com/)
-- [Zeit](https://zeit.co/now)
-
-(https://course-v3.fast.ai/deployment_zeit.html)
-
-## Python Web Frameworks
-
-There are two options for a Python web framework:  
-- [Starlette](https://www.starlette.io/): Starlette is a lightweight ASGI framework/toolkit, which is ideal for building high performance asyncio services.  Python 3.6+ is required.  It is [ASGI](https://asgi.readthedocs.io/en/latest/)
-- [Flask](http://flask.pocoo.org/) is a [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface).  Flask based on Python 2 did not support asynchronous, but Flask in Python 3 does support it.  
+## Using Flask for Python Web Framework
+- [Flask](http://flask.pocoo.org/) is a [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface).   
 
 It is best to use a framework which is **asynchronous** because it can handle **multiple requests** at a time.
 
-In this article, We provide instructions on using the Flask framework that is deployed on Heroku.
+In this article, we provide instructions on using the Flask framework that is deployed on Heroku.
 
 ### Our Flask Web Application
 https://food-img-classifier.herokuapp.com
 
 
 
+## Mobile Deployment 
+## repo for iOS / Android App
+https://github.com/npatta01/food-app
 
+ 
 ### Heroku App
 
 - https://food-img-classifier.herokuapp.com
