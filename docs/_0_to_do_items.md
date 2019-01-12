@@ -1,8 +1,12 @@
 # To Do
 
 1.  clean up web app
-- Rename repo:  (food-classifier to ----> mobile-deep-learning-classifier)
-- Rename deployed heroku url (food-classifier to ----> mobile-deep-learning-classifier)
+- Rename repo:  (food-classifier to ----> mobile-deep-learning-classifier) ✅
+  - contains Expo source code
+- Rename deployed heroku url (np-food-classifier to ----> food-img-classifier) ✅
+  - Heroku login: https://id.heroku.com/login
+  - Heroku dashboard:  https://dashboard.heroku.com/apps/food-img-classifier
+
 - This is a good example:  
   - the form request example is here: https://github.com/nikhilno1/healthy-or-not
   - app: https://healthy-or-not.herokuapp.com
@@ -12,6 +16,8 @@
 
 
 4.  We can take a video of mobile app in action and include a link to YouTube video.
+https://dashboard.heroku.com/apps/food-img-classifier
+
 
 
 #### example web apps
@@ -20,7 +26,7 @@
 - [water classifier heroku app](https://water-classifier1.herokuapp.com)
 - [water classifier code](https://github.com/shankarj67/Water-classifier-fastai)
 
-https://id.heroku.com/login
+
 
 
 2. figure out which repo to use  
