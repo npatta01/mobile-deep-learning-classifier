@@ -10,7 +10,8 @@
 - Clean up mobile app
   - Score should be 1 decimal point
   - Include softmax probability, with 1 decimal point
-  - 
+  - formatting
+  
 - Rename repo:  (food-classifier to ----> mobile-deep-learning-classifier) ✅
   - contains Expo source code
 - Rename deployed heroku url (np-food-classifier to ----> food-img-classifier) ✅
