@@ -1,8 +1,9 @@
 # To Do
 
 ## 1.  Clean up web app
-  - Score should be 1 decimal point
-  - Include softmax probability, with 1 decimal point
+  - use template
+  - add option for url link:  "Submit a URL"
+  - in results, want to show similar output as mobile (category, output, probability)
   
 #### Example web app 
 - this is a good example of web app, in terms of presentation
