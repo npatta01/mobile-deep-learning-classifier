@@ -10,7 +10,7 @@ import {
 import {AppConfig} from "../config"
 
 
-import {Text, Icon, FlatList} from 'react-native-elements';
+import {Text, Icon, FlatList, ListItem} from 'react-native-elements';
 
 import {Permissions} from 'expo';
 
@@ -67,6 +67,7 @@ export default class HomeScreen extends React.Component {
         );
     }
 
+
     renderPredictions() {
 
         if (this.state.loading) {
@@ -78,18 +79,18 @@ export default class HomeScreen extends React.Component {
             return (
                 <View style={styles.predictionsContentContainer}>
                     <Text h3>Predictions</Text>
-                    <Text h5>Most likely: {predictedClass} </Text>
-                    <Text h3>Other possibilities</Text>
                     <View>
-                        {predictions.map(p => {
-                            return (
-                                <View key={p.class} style={styles.predictionRow}>
-                                    <Text>{p.class}</Text>
-                                    <Text>output: {p.loss}</Text>
-                                </View>
-                            );
-                        })}
+                        {
+                            predictions.map((item, index) => (
+                                <ListItem
+                                    key={index}
+                                    title={item.class}
+                                    subtitle={`output: ${item.output}  prob: ${item.prob}`} hideChevron={true}
+                                />
+                            ))
+                        }
                     </View>
+
                 </View>
             )
         } else {
@@ -245,8 +246,9 @@ const styles = StyleSheet.create({
 
     predictionRow: {
         flexDirection: "row",
-        justifyContent: "space-between"
+        //justifyContent: "space-between"
     },
+
 
     predictionRowCategory: {
         flex: 1,

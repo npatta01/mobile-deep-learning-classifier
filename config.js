@@ -2,7 +2,7 @@ const AppConfig =
 
 {
     title : "What Food Is It?"
-    ,host : "https://np-food-classifier.herokuapp.com"
+    ,host : "https://food-img-classifier.herokuapp.com"
 }
 
 const description = `

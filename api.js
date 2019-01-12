@@ -1,7 +1,7 @@
 import {AppConfig} from "./config";
 
 const host = AppConfig.host;
-
+import axios from 'axios';
 
 const axiosClient = axios.create({
     baseURL: host,
