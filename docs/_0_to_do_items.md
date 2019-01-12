@@ -1,6 +1,6 @@
 # To Do
 
-## Clean up web app
+## 1.  Clean up web app
   - Score should be 1 decimal point
   - Include softmax probability, with 1 decimal point
   
@@ -8,11 +8,13 @@
 - this is a good example of web app, in terms of presentation
     - the form request example is here: https://github.com/nikhilno1/healthy-or-not
     - app: https://healthy-or-not.herokuapp.com
+    - code:  https://github.com/nikhilno1/healthy-or-not/blob/master/food-detector.py
+
     
 #### DONE
 - on Heroku:  change "loss" to "output"✅
 
-## Clean up **MOBILE** app
+## 2.  Clean up **MOBILE** app
 
   - remove ".ipynb_checkpoints" as a category on the mobile screen 
 
@@ -23,22 +25,16 @@
   - formatting ✅
   - Rename repo:  (food-classifier to ----> mobile-deep-learning-classifier) ✅  
   
-  
-## Heroku
-  - Heroku login: https://id.heroku.com/login
-  - Heroku dashboard:  https://dashboard.heroku.com/apps/food-img-classifier
-- This is a good example:  
-  - [healthy or not app](https://healthy-or-not.herokuapp.com)
-  - code:  https://github.com/nikhilno1/healthy-or-not/blob/master/food-detector.py
+
+## 3.  Run model again
+- remove .ipynb checkpoint files
+
 
 #### DONE
 - Rename deployed heroku url (np-food-classifier to ----> food-img-classifier) ✅
 
 
-## Run model again
-- remove .ipynb checkpoint files
-
-## Create video of mobile app
+## 4.  Create video of mobile app
 - take a video of mobile app in action and include a link to YouTube video.
 
 
@@ -55,8 +51,12 @@
 2. figure out which repo to use  
 
 - https://food-img-classifier.herokuapp.com
-- http://np-food-classifier.herokuapp.com
 - can use this example link:  https://whatscookingamerica.net/wp-content/uploads/2015/03/ApplePie423.jpg
+
+
+## Heroku
+  - Heroku login: https://id.heroku.com/login
+  - Heroku dashboard:  https://dashboard.heroku.com/apps/food-img-classifier
 
 
 ---
