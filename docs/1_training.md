@@ -1,10 +1,10 @@
-# Training the Food Classifier
+# Training the Image Classifier
 
 This project was completed jointly by [Nidhin Pattaniyil](https://www.linkedin.com/in/nidhinpattaniyil/) and [Reshama Shaikh](https://reshamas.github.io).
 
 These are the requirements:  
 - fastai:  version 1.18
-- PyTorch:  version  1.0
+- PyTorch:  version  1.0  (dev or stable)
 - Python:  version 3.6
 
 
