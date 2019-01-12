@@ -3,7 +3,7 @@
 - Clean up web app
   - Score should be 1 decimal point
   - Include softmax probability, with 1 decimal point
-  - this is a good example of web app
+  - this is a good example of web app, in terms of presentation
     - the form request example is here: https://github.com/nikhilno1/healthy-or-not
     - app: https://healthy-or-not.herokuapp.com
 
