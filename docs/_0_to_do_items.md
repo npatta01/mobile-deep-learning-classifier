@@ -4,12 +4,12 @@
   - Score should be 1 decimal point
   - Include softmax probability, with 1 decimal point
   
-### Example web app 
+#### Example web app 
 - this is a good example of web app, in terms of presentation
     - the form request example is here: https://github.com/nikhilno1/healthy-or-not
     - app: https://healthy-or-not.herokuapp.com
     
-### DONE
+#### DONE
 - on Heroku:  change "loss" to "output"✅
 
 ## Clean up **MOBILE** app
@@ -17,21 +17,24 @@
   - remove ".ipynb_checkpoints" as a category on the mobile screen 
 
 
-### DONE
+#### DONE
   - Output score should be 1 decimal point ✅
   - Include probability of outputs, with 2 decimal point ✅
   - formatting ✅
-  - Rename repo:  (food-classifier to ----> mobile-deep-learning-classifier) ✅
-  - contains Expo source code  
+  - Rename repo:  (food-classifier to ----> mobile-deep-learning-classifier) ✅  
   
   
 ## Heroku
-- Rename deployed heroku url (np-food-classifier to ----> food-img-classifier) ✅
   - Heroku login: https://id.heroku.com/login
   - Heroku dashboard:  https://dashboard.heroku.com/apps/food-img-classifier
 - This is a good example:  
   - [healthy or not app](https://healthy-or-not.herokuapp.com)
   - code:  https://github.com/nikhilno1/healthy-or-not/blob/master/food-detector.py
+
+#### DONE
+- Rename deployed heroku url (np-food-classifier to ----> food-img-classifier) ✅
+
+
 ## Run model again
 - remove .ipynb checkpoint files
 
