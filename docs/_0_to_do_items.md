@@ -6,7 +6,7 @@
   - this is a good example of web app, in terms of presentation
     - the form request example is here: https://github.com/nikhilno1/healthy-or-not
     - app: https://healthy-or-not.herokuapp.com
-
+  - on Heroku:  change "loss" to "output"
 - Clean up mobile app
   - Score should be 1 decimal point
   - Include softmax probability, with 1 decimal point
