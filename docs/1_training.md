@@ -3,15 +3,14 @@
 This project was completed jointly by [Nidhin Pattaniyil](https://www.linkedin.com/in/nidhinpattaniyil/) and [Reshama Shaikh](https://reshamas.github.io).
 
 These are the requirements:  
-PyTorch:  version  1.0
+- fastai:  version 1.18
+- PyTorch:  version  1.0
+- Python:  version 3.6
 
 
 
 ## Overview Diagram
 
-
-## Python version
-We are using Python version 3.6
 
 
 
