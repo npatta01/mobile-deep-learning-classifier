@@ -3,7 +3,10 @@
 - Clean up web app
   - Score should be 1 decimal point
   - Include softmax probability, with 1 decimal point
-  - 
+  - this is a good example of web app
+    - the form request example is here: https://github.com/nikhilno1/healthy-or-not
+    - app: https://healthy-or-not.herokuapp.com
+
 - Clean up mobile app
   - Score should be 1 decimal point
   - Include softmax probability, with 1 decimal point
@@ -15,8 +18,6 @@
   - Heroku dashboard:  https://dashboard.heroku.com/apps/food-img-classifier
 
 - This is a good example:  
-  - the form request example is here: https://github.com/nikhilno1/healthy-or-not
-  - app: https://healthy-or-not.herokuapp.com
 
 2.  add probability (in addition to the current "score" output on the mobile app)
 - Also, need to format output, or at least change to 2 decimal places.
