@@ -1,4 +1,4 @@
-# Part 2:  Deploying the Classifier on Mobile
+# Part 2:  Deploying the Image Classifier on Mobile
 
 These additional tools were used:
 - Heroku
