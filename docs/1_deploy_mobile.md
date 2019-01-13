@@ -70,16 +70,4 @@ L Bossard, M Guillaumin, L Van Gool
 European Conference on Computer Vision, 446-461
 
 
---- 
-
-Assumptions:  
-- a deep learning model served as a web app that responds to 
-Here is a sample web app:
-It needs these endpoints:  
-/api/classify
-
-Input:  
-1.  food-classifier repo (which has the `final.pth` file)
-OR
-2.  a web app model trained using any other deep learning library
 
