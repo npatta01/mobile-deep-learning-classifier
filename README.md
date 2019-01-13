@@ -1,10 +1,15 @@
 # Creating a Mobile App 
 
-## Table of Contents  
-1.  Assumptions
+This project was completed jointly by [Nidhin Pattaniyil](https://www.linkedin.com/in/nidhinpattaniyil/) and [Reshama Shaikh](https://reshamas.github.io).
 
---- 
+The following were used for mobile model **deployment**:    
+1.  Expo
+2.  XCode (optional)
 
+Here is a link to a demo of our mobile app on [YouTube](https://www.youtube.com/watch?v=7d2qFLeYvRc&t=1s)
+
+
+## Assumptions
 Assumptions:  
 - a deep learning model served as a web app that responds to 
 Here is a sample web app:
@@ -17,17 +22,16 @@ OR
 2.  a web app model trained using any other deep learning library
 
 
-2.  Setup 
-    - Update [config.js](https://github.com/npatta01/mobile-deep-learning-classifier/blob/master/config.js) with developer name, app name, app description
+## Setup 
+- Update [config.js](https://github.com/npatta01/mobile-deep-learning-classifier/blob/master/config.js) with developer name, app name, app description
    
-3.  Runnng on iOS or Android
+## Runnng on iOS or Android
 
-This was used for mobile deployment:  
+## This was used for mobile deployment:  
 1.  Expo
 2.  XCode (optional)
 
 
-[Youtube Link](https://www.youtube.com/watch?v=7d2qFLeYvRc&t=1s)
 
 ## HOLD for SCREENSHOTS of MOBILE App
 
