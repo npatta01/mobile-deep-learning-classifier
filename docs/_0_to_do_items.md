@@ -40,7 +40,8 @@
 
 
 ## 4.  Create (new) video of mobile app
-- take a video of mobile app in action and include a link to YouTube video.
+- take a video of mobile app in action and include a link to YouTube video (?)
+- take screen shots of updated mobile app and include in the README for mobile
 
 
 #### example web apps
