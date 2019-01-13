@@ -1,5 +1,8 @@
 # Part 2:  Deploying the Image Classifier on Mobile
 
+### Assumptions
+Part 2 here assumes that Part 1 is complete and that the heroku web app is running and the `final.pth` file is available.
+
 These additional tools were used:
 - Heroku
 - Expo
@@ -65,3 +68,18 @@ If you need to distribute large files within your repository, we recommend that 
 [Food-101–mining discriminative components with random forests](https://link.springer.com/chapter/10.1007%2F978-3-319-10599-4_29)
 L Bossard, M Guillaumin, L Van Gool
 European Conference on Computer Vision, 446-461
+
+
+--- 
+
+Assumptions:  
+- a deep learning model served as a web app that responds to 
+Here is a sample web app:
+It needs these endpoints:  
+/api/classify
+
+Input:  
+1.  food-classifier repo (which has the `final.pth` file)
+OR
+2.  a web app model trained using any other deep learning library
+
