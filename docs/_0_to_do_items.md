@@ -1,9 +1,9 @@
 # To Do
 
 ## 1.  Clean up web app
-  - use template
+  - make it a template
   - add option for url link:  "Submit a URL"
-  - in results, want to show similar output as mobile (category, output, probability)
+
   
 #### Example web app 
 - this is a good example of web app, in terms of presentation
@@ -14,6 +14,8 @@
     
 #### DONE
 - on Heroku:  change "loss" to "output"✅
+- web app:  in results, want to show similar output as mobile (category, output, probability) ✅
+
 
 ## 2.  Clean up **MOBILE** app
 
