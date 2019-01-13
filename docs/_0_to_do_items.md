@@ -18,8 +18,8 @@
 
 
 ## 2.  Clean up **MOBILE** app
-
-  - remove ".ipynb_checkpoints" as a category on the mobile screen 
+  - remove ".ipynb_checkpoints" as a category on the mobile screen OR confirm that it's done
+  - refresh the mobile app, check that everything is ok 
 
 
 #### DONE
@@ -29,15 +29,17 @@
   - Rename repo:  (food-classifier to ----> mobile-deep-learning-classifier) ✅  
   
 
-## 3.  Run model again
-- remove .ipynb checkpoint files
+## 3.  Notebook for Running Model
+- add comments
+
 
 
 #### DONE
 - Rename deployed heroku url (np-food-classifier to ----> food-img-classifier) ✅
+- remove .ipynb checkpoint files ✅
 
 
-## 4.  Create video of mobile app
+## 4.  Create (new) video of mobile app
 - take a video of mobile app in action and include a link to YouTube video.
 
 
