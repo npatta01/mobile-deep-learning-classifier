@@ -3,7 +3,7 @@
 ### Table of Contents  
 1.  Assumptions
 2.  Setup 
-    - update the config.js file (with developer name, app name, app description)
+    - Update [config.js](https://github.com/npatta01/mobile-deep-learning-classifier/blob/master/config.js) with developer name, app name, app description
    
 3.  Runnng on iOS or Android
 
