@@ -12,8 +12,7 @@ This was used for mobile deployment:
 
 [Youtube Link](https://www.youtube.com/watch?v=7d2qFLeYvRc&t=1s)
 
-Screenshots
-
+## HOLD for SCREENSHOTS of MOBILE App
 
 
 
