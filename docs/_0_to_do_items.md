@@ -1,8 +1,8 @@
 # To Do
 
 ## 1.  Clean up web app
-  - make it a template
-  - add option for url link:  "Submit a URL"
+  - make it a template ✅
+  - add option for url link:  "Submit a URL" ✅
 
   
 #### Example web app 
