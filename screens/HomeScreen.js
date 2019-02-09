@@ -101,16 +101,12 @@ export default class HomeScreen extends React.Component {
 
     _verifyPermissions = async () => {
         console.log("Verifying Permissions");
+        const { status, expires, permissions } = await Permissions.getAsync(Permissions.CAMERA, Permissions.CAMERA_ROLL);
 
-        const cameraPermission = await Permissions.askAsync(Permissions.CAMERA);
-        const cameraRollPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-
-        const {status, expires, permissions} = await Permissions.getAsync(Permissions.CAMERA, Permissions.CAMERA_ROLL);
         if (status !== 'granted') {
-            const cameraPermission = await Permissions.askAsync(Permissions.CAMERA);
-            const cameraRollPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-
-            if (cameraPermission.status === 'granted' && cameraRollPermission.status === 'granted') {
+            const { status, permissions }  = await Permissions.askAsync(Permissions.CAMERA, Permissions.CAMERA_ROLL)
+           
+            if (status === 'granted') {
                 console.log("Permissions granted");
                 return true
             } else {
@@ -118,6 +114,8 @@ export default class HomeScreen extends React.Component {
                 return false
             }
 
+        }else{
+            return true;
         }
     };
 
