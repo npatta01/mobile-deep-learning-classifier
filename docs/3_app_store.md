@@ -1,3 +1,20 @@
+Android build
+```
+expo build:android
+expo url:apk
+```
+
+Ios build
+```
+expo build:ios
+expo url:ipa
+```
+
+
+
+
+
+
 ![Create Play App](images/part3/play_store_create.png)
 
 ![Play Store  Naming](images/part3/play_store_name.png)
@@ -25,3 +42,7 @@ fastlane pilot upload --skip_submission \
 5.8 inch (iPhone X, iPhone XS)
 
 1125 x 2436 pixels (portrait)
+
+
+# Links
+[Privacy Policy](docs/appstore/privacy_policy.md)      

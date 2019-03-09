@@ -3,7 +3,7 @@ const AppConfig =
 {
     title : "What Food Is It?"
     ,host : "https://food-img-classifier.herokuapp.com"
-}
+};
 
 const description = `
 This mobile app was developed by 
