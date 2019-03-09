@@ -1,7 +1,10 @@
 # Expo
 
+Expo is a mobile cross platform built on top of react native.
 
-Customizing
+The guide below walks you through getting expo installed and running your app on your device.
+
+
 
 ## Setup
 To develop locally, you will [Node](https://nodejs.org/en/) and [Expo](https://expo.io/tools#client) installed
@@ -64,24 +67,25 @@ You should see this project your listed on the app
 
 
 6) Customizing message
-Modify [config.js](../config.js)      
+Modify [config.js](../config.js)    
+![Config](images/part2/modify_config.png)
+  
 Modify "title", to change the copy listed on the "Home" screen     
 Modify "host" to point to a deployed version of your model
 Modify "description" to change the copy on the "About" screen
 
-Description takes markdown
 
 
-Refer to section to see endpoints needed by your app.
+## Custom Endpoint
+If you want to point your app your api, it needs these endpoints.
 
-7) Deploying to the store (optional)
-If you are interested in deploying to Google, and Apple you can run the below commands
-
-
-
-If you want to use this project as a template for your own model, here are the changes to be made.
-
-/api/classify   Takes image data as binary and returns classes
 /api/classes    Return a list of classes
+/api/classify   Takes image data as binary and returns classes
+
+[Here](https://github.com/npatta01/food-classifier/blob/master/src/app.py) is a sample implementation.
+
+
+## Deploying to the store (optional)
+If you are interested in deploying to Google, and Apple refer to this [guide](3_app_store.md)
 
 
