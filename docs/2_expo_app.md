@@ -1,82 +1,91 @@
 # Expo
 
+Expo is a mobile cross platform built on top of react native.
 
-Customizing
+The guide below walks you through getting expo installed and running your app on your device.
+
+
 
 ## Setup
-To develop locally, you will [Node]() and [Expo]() installed
+To develop locally, you will [Node](https://nodejs.org/en/) and [Expo](https://expo.io/tools#client) installed
 
-1) Install Node (Mac/Windows)
+1) Install Node 
+A) Mac/Linux
 We will install node using [NVM](https://github.com/creationix/nvm)
 ```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 # comment
 nvm install node 
 nvm use node
+source ~/.bash_profile
 ```
+
+B) Windows
+Download through official installer [Link](https://nodejs.org/en/download/)
+
 
 
 2) Install Expo
+Expo is a wrapper build on top of React Native; a cross platform mobile framework.
+It can be installed with the below command.
 ```
 npm install -g expo-cli
 ```
 
 3) Install packages for project
+NPM Packages that you need for your application are specified in [package.json](package.json).
+To install the packages, run
 ```
 npm install
 ```
 
 4) Expo Setup
-Download [Android] or IOS App from the respective stores
+Download [Android](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US) or [IOS](https://itunes.apple.com/us/app/expo-client/id982107779?mt=8) App from the respective mobile stores
+
 Login to the expo app.
+![Expo Login](images/part2/expo_login_device.png)
+
+
+
+Completing this step will allow code that we developed locally to be updated on the device
 
 5) Launch App
+Login to expo on your computer
 ```
 expo login
-# you will be asked for your credentials
-expo start
 ```
+![Expo Login](images/part2/expo_login_computer.png)
 
+
+Launch expo
+```
+npm run start
+```
 You should see this project your listed on the app
+![App List](images/part2/expo_app_in_list.png)
+
 
 
 6) Customizing message
-Modify [config.json]()
-Modify "title", to change the cop listed on the "Home" screen
+Modify [config.js](../config.js)    
+![Config](images/part2/modify_config.png)
+  
+Modify "title", to change the copy listed on the "Home" screen     
+Modify "host" to point to a deployed version of your model
 Modify "description" to change the copy on the "About" screen
 
-Description takes markdown
-
-Modify "host" to point to a deployed version of your model
-
-Refer to section to see endpoints needed by your app.
-
-7) Deploying to the store (optional)
-If you are interested in deploying to Google, and Apple you can run the below commands
-
-Android build
-```
-expo build:android
-expo url:apk
-```
-
-Ios build
-```
-expo build:ios
-expo url:ipa
-```
 
 
+## Custom Endpoint
+If you want to point your app your api, it needs these endpoints.
+
+/api/classes    Return a list of classes     
+/api/classify   Takes image data as binary and returns classes        
+
+[Here](https://github.com/npatta01/food-classifier/blob/master/src/app.py) is a sample implementation.
 
 
-If you want to use this project as a template for your own model, here are the changes to be made.
-
-Modify "title","host","description" in [conifg.js](confi.js).
-Host should be a service that can listen to these type of requests.
-
-/api/classify   Takes image data as binary and returns classes
-/api/classes    Return a list of classes
+## Deploying to the store (optional)
+If you are interested in deploying to Google, and Apple refer to this [guide](3_app_store.md)
 
 
-# Links
-[Privacy Policy](docs/appstore/privacy_policy.md)      
