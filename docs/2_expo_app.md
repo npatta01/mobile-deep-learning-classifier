@@ -79,8 +79,8 @@ Modify "description" to change the copy on the "About" screen
 ## Custom Endpoint
 If you want to point your app your api, it needs these endpoints.
 
-/api/classes    Return a list of classes
-/api/classify   Takes image data as binary and returns classes
+/api/classes    Return a list of classes     
+/api/classify   Takes image data as binary and returns classes        
 
 [Here](https://github.com/npatta01/food-classifier/blob/master/src/app.py) is a sample implementation.
 
