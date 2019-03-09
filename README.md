@@ -10,8 +10,6 @@ Here is a link to a demo of our mobile app on [YouTube](https://www.youtube.com/
 
 ![Demo](docs/images/demo.gif)
 
-[![Youtube Link](https://img.youtube.com/vi/7d2qFLeYvRc/maxresdefault.jpg)](https://www.youtube.com/watch?v=7d2qFLeYvRc "")
-
 
 
 ## Assumptions
