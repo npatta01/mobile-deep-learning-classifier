@@ -53,9 +53,6 @@ These simulators are not required, though they are helpful in developing the app
 [a] Cost indicated are in US dollars.
 
 
-## Once mobile app is running
-TO_DO:  take short video, upload to YouTube, embed link in blog.
-
 
 
 ## References
