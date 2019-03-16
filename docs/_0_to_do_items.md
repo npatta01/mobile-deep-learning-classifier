@@ -52,21 +52,6 @@
 
 ---
 
-## References
-
-2. figure out which repo to use  
-
-- https://food-img-classifier.herokuapp.com
-- can use this example link:  https://whatscookingamerica.net/wp-content/uploads/2015/03/ApplePie423.jpg
-
-
-## Heroku
-  - Heroku login: https://id.heroku.com/login
-  - Heroku dashboard:  https://dashboard.heroku.com/apps/food-img-classifier
-
-
----
-
 Notes:  only Android users can run the mobile app.  
 1. scan the barcode:  
 - using QR Code (iPhone)
