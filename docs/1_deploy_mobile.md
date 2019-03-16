@@ -13,7 +13,7 @@ These additional tools were used:
 
 ## Mobile Deployment 
 ## repo for iOS / Android App
-https://github.com/npatta01/food-app
+https://github.com/npatta01/mobile-deep-learning-classifier
 
  
 ### Heroku App
@@ -26,7 +26,8 @@ https://github.com/npatta01/food-app
 
 ## repo for iOS / Android App
 - Docs are stored in this repo:
-- https://github.com/npatta01/food-app
+- https://github.com/npatta01/mobile-deep-learning-classifier
+
 
 
 This app lets you submit a photo of food and returns the predicted food category.  :pizza:
