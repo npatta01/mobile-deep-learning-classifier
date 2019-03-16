@@ -19,8 +19,6 @@ https://github.com/npatta01/food-app
 ### Heroku App
 
 - https://food-img-classifier.herokuapp.com
-http://np-food-classifier.herokuapp.com
-
 
 
  
