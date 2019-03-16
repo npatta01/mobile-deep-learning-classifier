@@ -4,7 +4,7 @@ expo build:android
 expo url:apk
 ```
 
-Ios build
+iOS build
 ```
 expo build:ios
 expo url:ipa
