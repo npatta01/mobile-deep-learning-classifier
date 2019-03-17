@@ -50,6 +50,7 @@ These simulators are not required, though they are helpful in developing the app
 | What is the cost of publishing to the store for public access? [a]| $100 per year | $30 one-time fee                           |
 | Does official store publishing require: screenshots, privacy policy and contact info?  | yes                       | yes       |
 | For official store publishing, is a review required?  | Apple will do peer review | no additional review required              |
+
 [a] Cost indicated are in US dollars.
 
 
@@ -57,7 +58,7 @@ These simulators are not required, though they are helpful in developing the app
 
 ## References
 - [Expo](https://expo.io/): is a free and open source toolchain built around React Native to help you build native iOS and Android projects using JavaScript and React.
--[GitHub Help: Distributing Large Binaries] (https://help.github.com/articles/about-releases/) Some projects require distributing large files, such as binaries or installers, in addition to distributing source code.
+-[GitHub Help: Distributing Large Binaries](https://help.github.com/articles/about-releases/) Some projects require distributing large files, such as binaries or installers, in addition to distributing source code.
 
 If you need to distribute large files within your repository, we recommend that you create releases for your projects on GitHub. Releases allow you to include binary files, such as compiled programs. For more information, visit "Creating releases."
 
