@@ -9,8 +9,9 @@ The guide below walks you through getting expo installed and running your app on
 ## Setup
 To develop locally, you will [Node](https://nodejs.org/en/) and [Expo](https://expo.io/tools#client) installed
 
-1) Install Node 
-A) Mac/Linux
+1) Install Node  
+
+A) **Mac/Linux**
 We will install node using [NVM](https://github.com/creationix/nvm)
 ```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
@@ -20,7 +21,7 @@ nvm use node
 source ~/.bash_profile
 ```
 
-B) Windows
+B) **Windows**
 Download through official installer [Link](https://nodejs.org/en/download/)
 
 
