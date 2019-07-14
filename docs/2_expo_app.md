@@ -62,6 +62,12 @@ Launch expo
 ```
 npm run start
 ```
+Note: If your phone is on a different network than where you are running, then run
+```
+expo start --tunnel
+```
+
+
 You should see this project your listed on the app
 ![App List](images/part2/expo_app_in_list.png)
 
