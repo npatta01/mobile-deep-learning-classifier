@@ -13,16 +13,20 @@
   },
   "dependencies": {
     "@expo/samples": "2.1.1",
-    "axios": "^0.18.0",
-    "expo": "^31.0.2",
+    "axios": "^0.18.1",
+    "expo": "^35.0.0",
     "human-format": "^0.10.1",
-    "lodash.merge": "^4.6.1",
+    "lodash.merge": "^4.6.2",
     "punycode": "^2.1.1",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "react": "16.8.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
     "react-native-elements": "^0.19.1",
+    "react-native-markdown-renderer": "^3.2.8",
     "react-navigation": "^2.18.2",
-    "react-native-markdown-renderer": "^3.2.8"
+    "expo-permissions": "~7.0.0",
+    "expo-asset": "~7.0.0",
+    "expo-image-picker": "~7.0.0",
+    "expo-image-manipulator": "~7.0.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"
