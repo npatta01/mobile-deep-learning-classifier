@@ -13,10 +13,11 @@ import {AppConfig} from "../config"
 import {Text, Icon, FlatList, ListItem} from 'react-native-elements';
 
 import * as Permissions from 'expo-permissions';
+import {Asset} from 'expo-asset'
+
 
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as ImagePicker from 'expo-image-picker'
-import * as Asset from 'expo-asset'
 import {ApiService} from "../api";
 
 
