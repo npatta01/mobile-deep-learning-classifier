@@ -1,17 +1,18 @@
 {
   "expo": {
     "name": "food-app",
-    "description": "A very interesting project.",
     "slug": "food-app",
+    "version": "1.0.2",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+
+    "description": "A very interesting project.",
     "privacy": "public",
-    "sdkVersion": "31.0.0",
     "platforms": [
       "ios",
       "android"
     ],
-    "version": "1.0.2",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
