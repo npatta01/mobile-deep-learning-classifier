@@ -32,8 +32,9 @@ type State = {
   
 };
 
+
   
-export default class HomeScreen extends React.Component {
+export default class HomeScreen extends React.Component<{},State> {
 
   state:State = {
     image: null,
@@ -42,6 +43,7 @@ export default class HomeScreen extends React.Component {
     appIsReady: false
 
   }
+  
 
   async componentDidMount() {
     // Prevent native splash screen from autohiding
@@ -59,6 +61,9 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+
+    const { theme } = this.props;
+    console.log(theme);
 
     return (
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -105,6 +110,7 @@ renderPredictions() {
 
         const predictions = predictiopnResponse.predictions.sort((a, b) => b.prob - a.prob).slice(0, 3);
         console.log(predictions)
+
         return (
             <View style={styles.predictionsContentContainer}>
                 <Text h3>Predictions</Text>
@@ -116,7 +122,7 @@ renderPredictions() {
                                 <ListItem.Content >
 
                                   <ListItem.Title>{item.class}</ListItem.Title>
-                                  <ListItem.Subtitle>{`output: ${item.output}  prob: ${item.prob}`}</ListItem.Subtitle>
+                                  <Text>{`output: ${item.output}  prob: ${item.prob}`}</Text>
                                 </ListItem.Content>
 
                               </ListItem>
@@ -277,20 +283,5 @@ predictionsContentContainer: {
 
 },
 
-predictionRow: {
-    flexDirection: "row",
-    //justifyContent: "space-between"
-},
 
-
-predictionRowCategory: {
-    flex: 1,
-    justifyContent: "space-between"
-},
-
-predictionRowLabel: {
-    flex: 1,
-    justifyContent: "space-between"
-
-}
 });
